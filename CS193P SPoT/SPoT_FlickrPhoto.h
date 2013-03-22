@@ -14,6 +14,8 @@
 @property (nonatomic, strong) NSString *photo_title;
 @property (nonatomic, strong) NSString *photo_description;
 @property (nonatomic, strong) NSArray  *photo_tags;
+@property (nonatomic, weak) NSURL *photo_URL;
+
 
 @property (nonatomic, strong) NSDictionary *flickrDictionary;
 

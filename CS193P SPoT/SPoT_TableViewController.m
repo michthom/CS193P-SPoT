@@ -7,6 +7,7 @@
 //
 
 #import "SPoT_TableViewController.h"
+#import "SPoT_ImageViewController.h"
 #import "FlickrFetcher.h"
 #import "SPoT_FlickrPhoto.h"
 #import "SPoT_TableViewCell.h"
@@ -30,7 +31,13 @@
 {
     if ([segue.identifier isEqualToString:@"showImage"]) {
         if ([sender isKindOfClass:[SPoT_TableViewCell class]]) {
-            // FIXME: Copy image data to the properties of the ImageViewController?
+            SPoT_TableViewCell *tableCell = (SPoT_TableViewCell *)sender;
+            
+            if ([[sender destinationViewController] isKindOfClass:[SPoT_ImageViewController class]]) {
+                SPoT_ImageViewController *imageVC = (SPoT_ImageViewController *)[sender destinationViewController];
+                
+                imageVC.imageURL = tableCell.imageURL;
+            };
         }
     }
 }
@@ -94,6 +101,7 @@
         SPoT_TableViewCell *recentCell = (SPoT_TableViewCell *)cell;
         recentCell.titleLabel.text = [self.photos[indexPath.item] photo_title];
         recentCell.descriptionLabel.text = [self.photos[indexPath.item] photo_description];
+        recentCell.imageURL = [self.photos[indexPath.item] photo_URL];
     }
     return cell;
 }
