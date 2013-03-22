@@ -19,12 +19,10 @@
 		5A850FE416F7C86900B8D173 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A850FE216F7C86900B8D173 /* MainStoryboard_iPhone.storyboard */; };
 		5A850FE716F7C86900B8D173 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A850FE516F7C86900B8D173 /* MainStoryboard_iPad.storyboard */; };
 		5A850FEA16F7C86900B8D173 /* SPoT_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A850FE916F7C86900B8D173 /* SPoT_ViewController.m */; };
-		5A850FF716F7C95B00B8D173 /* SPoT_FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A850FF616F7C95B00B8D173 /* SPoT_FlickrPhoto.m */; };
 		5A850FFD16F7C97000B8D173 /* SPoT_TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A850FFB16F7C97000B8D173 /* SPoT_TableViewController.m */; };
 		5A85100016F7C98400B8D173 /* SPoT_TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A850FFF16F7C98400B8D173 /* SPoT_TableViewCell.m */; };
 		5A85100816F7CA6400B8D173 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A85100716F7CA6400B8D173 /* FlickrFetcher.m */; };
 		5AA333B816FBC75B001EBC6E /* SPoT_ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA333B716FBC75B001EBC6E /* SPoT_ImageViewController.m */; };
-		5AA333BB16FBD546001EBC6E /* SPoT_TestImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA333BA16FBD546001EBC6E /* SPoT_TestImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,8 +43,6 @@
 		5A850FE616F7C86900B8D173 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		5A850FE816F7C86900B8D173 /* SPoT_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPoT_ViewController.h; sourceTree = "<group>"; };
 		5A850FE916F7C86900B8D173 /* SPoT_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPoT_ViewController.m; sourceTree = "<group>"; };
-		5A850FF516F7C95B00B8D173 /* SPoT_FlickrPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPoT_FlickrPhoto.h; sourceTree = "<group>"; };
-		5A850FF616F7C95B00B8D173 /* SPoT_FlickrPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPoT_FlickrPhoto.m; sourceTree = "<group>"; };
 		5A850FFA16F7C97000B8D173 /* SPoT_TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPoT_TableViewController.h; sourceTree = "<group>"; };
 		5A850FFB16F7C97000B8D173 /* SPoT_TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPoT_TableViewController.m; sourceTree = "<group>"; };
 		5A850FFE16F7C98400B8D173 /* SPoT_TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPoT_TableViewCell.h; sourceTree = "<group>"; };
@@ -56,8 +52,6 @@
 		5A85100716F7CA6400B8D173 /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
 		5AA333B616FBC75B001EBC6E /* SPoT_ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPoT_ImageViewController.h; sourceTree = "<group>"; };
 		5AA333B716FBC75B001EBC6E /* SPoT_ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPoT_ImageViewController.m; sourceTree = "<group>"; };
-		5AA333B916FBD546001EBC6E /* SPoT_TestImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPoT_TestImageViewController.h; sourceTree = "<group>"; };
-		5AA333BA16FBD546001EBC6E /* SPoT_TestImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPoT_TestImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,8 +127,6 @@
 		5A850FF016F7C8EB00B8D173 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5AA333B916FBD546001EBC6E /* SPoT_TestImageViewController.h */,
-				5AA333BA16FBD546001EBC6E /* SPoT_TestImageViewController.m */,
 				5A850FFA16F7C97000B8D173 /* SPoT_TableViewController.h */,
 				5A850FFB16F7C97000B8D173 /* SPoT_TableViewController.m */,
 				5AA333B616FBC75B001EBC6E /* SPoT_ImageViewController.h */,
@@ -158,8 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				5A85100916F7CA6A00B8D173 /* FlickrFetcher */,
-				5A850FF516F7C95B00B8D173 /* SPoT_FlickrPhoto.h */,
-				5A850FF616F7C95B00B8D173 /* SPoT_FlickrPhoto.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -245,12 +235,10 @@
 				5A850FD716F7C86900B8D173 /* main.m in Sources */,
 				5A850FDB16F7C86900B8D173 /* SPoT_AppDelegate.m in Sources */,
 				5A850FEA16F7C86900B8D173 /* SPoT_ViewController.m in Sources */,
-				5A850FF716F7C95B00B8D173 /* SPoT_FlickrPhoto.m in Sources */,
 				5A850FFD16F7C97000B8D173 /* SPoT_TableViewController.m in Sources */,
 				5A85100016F7C98400B8D173 /* SPoT_TableViewCell.m in Sources */,
 				5A85100816F7CA6400B8D173 /* FlickrFetcher.m in Sources */,
 				5AA333B816FBC75B001EBC6E /* SPoT_ImageViewController.m in Sources */,
-				5AA333BB16FBD546001EBC6E /* SPoT_TestImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

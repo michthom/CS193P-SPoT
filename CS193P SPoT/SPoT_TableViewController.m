@@ -9,7 +9,6 @@
 #import "SPoT_TableViewController.h"
 #import "SPoT_ImageViewController.h"
 #import "FlickrFetcher.h"
-#import "SPoT_FlickrPhoto.h"
 #import "SPoT_TableViewCell.h"
 
 @interface SPoT_TableViewController ()
@@ -47,6 +46,7 @@
                                                      format:FlickrPhotoFormatLarge];
                     [segue.destinationViewController performSelector:@selector(setImageURL:)
                                                           withObject:url];
+                    [segue.destinationViewController setTitle:[self.photos[indexPath.row] valueForKey:FLICKR_PHOTO_TITLE]];
                 }
             }
         }
