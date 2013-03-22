@@ -12,6 +12,4 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
-@property (nonatomic, strong) NSURL *imageURL;
-
 @end

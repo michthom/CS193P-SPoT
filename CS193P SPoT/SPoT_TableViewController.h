@@ -10,6 +10,6 @@
 
 @interface SPoT_TableViewController : UITableViewController
 
-@property (nonatomic, strong) NSMutableArray *photos;
+@property (nonatomic, strong) NSArray *photos;
 
 @end

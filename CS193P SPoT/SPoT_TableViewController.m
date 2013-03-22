@@ -18,37 +18,39 @@
 
 @implementation SPoT_TableViewController
 
-- (NSMutableArray *)photos
+@synthesize photos = _photos;
+
+- (NSArray *)photos
 {
     if (! _photos) {
-       _photos = [[NSMutableArray alloc] init];
+       _photos = [[NSArray alloc] init];
     }
     return _photos;
+}
+
+- (void)setPhotos:(NSArray *)photos
+{
+    _photos = photos;
+    [self.tableView reloadData];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"showImage"]) {
-        if ([sender isKindOfClass:[SPoT_TableViewCell class]]) {
-            SPoT_TableViewCell *tableCell = (SPoT_TableViewCell *)sender;
-            
-            if ([[sender destinationViewController] isKindOfClass:[SPoT_ImageViewController class]]) {
-                SPoT_ImageViewController *imageVC = (SPoT_ImageViewController *)[sender destinationViewController];
-                
-                imageVC.imageURL = tableCell.imageURL;
-            };
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        if (indexPath) {
+            if ([segue.identifier isEqualToString:@"showImage"]) {
+                if ([segue.destinationViewController respondsToSelector:@selector(setImageURL:)])
+                {
+                    NSURL *url = [FlickrFetcher urlForPhoto:self.photos[indexPath.row]
+                                                     format:FlickrPhotoFormatLarge];
+                    [segue.destinationViewController performSelector:@selector(setImageURL:)
+                                                          withObject:url];
+                }
+            }
         }
     }
-}
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
 }
 
 - (void)viewDidLoad
@@ -61,15 +63,9 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    NSArray *photoData = [FlickrFetcher stanfordPhotos];
-    NSLog(@"photos consists of: %@", photoData[0]);
     
-    for (int i=0; i < [photoData count]; i++) {
-        SPoT_FlickrPhoto *spotPhoto = [[SPoT_FlickrPhoto alloc] initWithFlickrDictionary:photoData[i]];
-        if (spotPhoto) {
-            [self.photos addObject:spotPhoto];
-        }
-    }
+    self.photos = [FlickrFetcher stanfordPhotos];
+    NSLog(@"photos consists of: %@", self.photos[0]);
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,12 +75,6 @@
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -99,9 +89,8 @@
     
     if ([cell isKindOfClass:[SPoT_TableViewCell class]]) {
         SPoT_TableViewCell *recentCell = (SPoT_TableViewCell *)cell;
-        recentCell.titleLabel.text = [self.photos[indexPath.item] photo_title];
-        recentCell.descriptionLabel.text = [self.photos[indexPath.item] photo_description];
-        recentCell.imageURL = [self.photos[indexPath.item] photo_URL];
+        recentCell.titleLabel.text = [self.photos[indexPath.row] valueForKey:FLICKR_PHOTO_TITLE];
+        recentCell.descriptionLabel.text = [self.photos[indexPath.row] valueForKey:FLICKR_PHOTO_OWNER];
     }
     return cell;
 }

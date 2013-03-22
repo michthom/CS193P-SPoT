@@ -56,7 +56,7 @@
                                 <connections>
                                     <outlet property="descriptionLabel" destination="tag-Rr-YSC" id="JWL-Tz-mzJ"/>
                                     <outlet property="titleLabel" destination="VIN-ga-urn" id="cxR-uN-Mh2"/>
-                                    <segue destination="cGc-3g-M1u" kind="push" trigger="accessoryAction" id="TFO-dy-CWs"/>
+                                    <segue destination="cGc-3g-M1u" kind="push" identifier="showImage" id="uyW-tG-Tst"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
